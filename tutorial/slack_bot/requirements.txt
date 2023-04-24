@@ -1,0 +1,3 @@
+dotenv-python
+slack_bolt
+aiohttp
