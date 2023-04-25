@@ -1,0 +1,35 @@
+apiVersion: '2018-10-01'
+location: eastus
+name: receiver
+properties:
+  containers:
+  - name: receiver
+    properties:
+      image: testmovecontainerresistry.azurecr.io/receiver:latest
+      resources:
+        requests:
+          cpu: 1.0
+          memoryInGB: 1.5
+      ports:
+      - port: 8888
+  - name: daprd
+    properties:
+      image: daprio/daprd:1.5.0
+      command: [
+        "./daprd",
+        "-app-id", "receiver",
+        "-app-port", "8888",
+        "-dapr-http-port", "3500",
+        "-placement-address", "localhost:50005"
+      ]
+      resources:
+        requests:
+          cpu: 0.5
+          memoryInGB: 1
+  osType: Linux
+  restartPolicy: Always
+  imageRegistryCredentials:
+  - server: testmovecontainerresistry.azurecr.io
+    username: TestMoveContainerResistry
+    password: EG26XTJc+mZf1rB9dN0st7samiCjMOJJk0PvqXEOVg+ACRAy4IDo
+
