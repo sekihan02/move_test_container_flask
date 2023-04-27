@@ -1,0 +1,12 @@
+version: v1.0.0
+steps:
+- build: -t $Registry/testmove-nginx:$ID .
+# - build:  -t $Registry/testmove-nginx:latest .
+# - cmd: -t $Registry/testmove-nginx:$ID
+#   id: test
+#   detach: true
+#   ports: ["80:80"]
+# - cmd: docker stop test
+# - push:
+#   - $Registry/testmove-nginx:$ID
+#   - $Registry/testmove-nginx:latest

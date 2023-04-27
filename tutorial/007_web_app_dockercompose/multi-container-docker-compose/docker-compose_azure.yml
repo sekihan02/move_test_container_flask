@@ -1,0 +1,8 @@
+version: '3'
+services:
+  web:
+    image: "testmovecontainerresistry.azurecr.io/wac-webappp-compose:latest" # ローカル実行から変わるのでbuildからimageに書き換え
+    ports:
+      - "5000:5000"
+  redis:
+    image: "redis:alpine"

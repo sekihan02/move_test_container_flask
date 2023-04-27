@@ -1,0 +1,6 @@
+単一のDockerイメージをWeb App for Containersで実行していましたが、複数のコンテナを組み合わせて1つのアプリケーションとしてFlaskとRedisを使ったWebアプリケーションの実装しようとしてみます。
+また、Docker Composeを使用します。
+
+ComposeファイルはYAML形式で記載、versionでComposeファイルの形式、servicesで実行したいコンテナの情報をサービス名として、webとredisを設定しています
+
+Web App for Containersへのデプロイは事前にACRへのプッシュが必要です
